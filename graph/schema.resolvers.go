@@ -104,6 +104,20 @@ func (r *queryResolver) Courses(ctx context.Context) ([]*model.Course, error) {
 	return coursesModel, nil
 }
 
+// CoursesByID is the resolver for the coursesById field.
+func (r *queryResolver) CoursesByID(ctx context.Context, id *string) (*model.Course, error) {
+	course, err := r.CourseDB.FindByCourseId(id)
+	if err != nil {
+		return nil, err
+	}
+	return &model.Course{
+		ID:          course.ID,
+		Name:        course.Name,
+		Description: &course.Description,
+	}, nil
+
+}
+
 // Category returns CategoryResolver implementation.
 func (r *Resolver) Category() CategoryResolver { return &categoryResolver{r} }
 

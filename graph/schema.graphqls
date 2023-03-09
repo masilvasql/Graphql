@@ -27,7 +27,9 @@ input NewCourse{
 type Query {
   categories: [Category!]!
   courses: [Course!]!
+  coursesById(id:String):Course
 }
+
 
 # MUTATIONS ALTERAÇÕES - INSERVÇÕES, DELETE
 type Mutation{

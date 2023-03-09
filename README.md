@@ -70,6 +70,20 @@ query queryCategoriesWithCourses{
   }
 }
 
+query findAllCoursesWithCategory{
+  courses{
+    id,
+    name,
+    description,
+    category{
+      id,
+      name,
+      description
+    }
+  }
+}
+
+
 ```
 
 _____________________
