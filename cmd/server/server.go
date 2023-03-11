@@ -2,10 +2,11 @@ package main
 
 import (
 	"database/sql"
-	"github.com/masilvasql/Graphql/internal/database"
 	"log"
 	"net/http"
 	"os"
+
+	"github.com/masilvasql/Graphql/internal/database"
 
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
@@ -13,7 +14,7 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 )
 
-const defaultPort = "8080"
+const defaultPort = "8081"
 
 func main() {
 	db, err := sql.Open("sqlite3", "./data.db")
